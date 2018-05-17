@@ -10,7 +10,7 @@
     "coverage": "jest --coverage",
     "build": "tsc",
     "lint": "tslint -p tsconfig.json -c ../../tslint.json src/*.ts",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
