@@ -1,0 +1,41 @@
+{
+  "name": "graphql-gizmos-resolve",
+  "version": "1.0.0",
+  "description": "GraphQL Utilities",
+  "author": "Robert Stenbom <robert@shockwork.net>",
+  "license": "UNLICENSED",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "coverage": "jest --coverage",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json -c ../../tslint.json src/*.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:robstenbom/graphql-gizmos.git"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "rootDir": "src",
+    "testEnvironment": "node",
+    "testRegex": "test\\.ts$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "jest": "^22.4.3",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  }
+}

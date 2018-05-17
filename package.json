@@ -1,0 +1,44 @@
+{
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "diff": "check-if-folder-contents-changed-in-git-commit-range",
+    "postbootstrap": "npm run build",
+    "build": "lerna run -- build",
+    "test": "lerna run -- test",
+    "coverage": "lerna run -- coverage",
+    "coverage:upload": "codecov",
+    "lint": "lerna run -- lint",
+    "prelint": "npm run lint-fix",
+    "lint-fix": "prettier --trailing-comma all --single-quote --write \"packages/*/{src,tests,test,benchmark}/**/*.{j,t}s*\"",
+    "lint-staged": "lint-staged",
+    "lint-check": "prettier-check --single-quote --trailing-comma all \"packages/*/{src,__tests__}/**/*.ts\""
+  },
+  "lint-staged": {
+    "*.{ts, tsx, js, jsx}": [
+      "prettier --trailing-comma all --single-quote --write",
+      "git add"
+    ],
+    "!(package).json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    }
+  },
+  "pre-commit": "lint-staged",
+  "pre-push": "lint-check",
+  "devDependencies": {
+    "check-if-folder-contents-changed-in-git-commit-range": "^1.0.0",
+    "lerna": "^2.11.0",
+    "lint-staged": "^7.1.0",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
+    "prettier": "^1.12.1",
+    "prettier-check": "^2.0.0",
+    "tslint-config-prettier": "^1.12.0",
+    "typescript": "^2.8.3"
+  }
+}
