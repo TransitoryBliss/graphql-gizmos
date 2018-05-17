@@ -11,7 +11,7 @@ test_script:
   - npm test
 
 after_test:
-  - npm run codecov
+  - npm run coverage:upload
 
 build: off
 deploy: off
