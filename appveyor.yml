@@ -11,7 +11,7 @@ test_script:
   - npm test
 
 after_test:
-  - npm codecov
+  - npm run codecov
 
 build: off
 deploy: off
